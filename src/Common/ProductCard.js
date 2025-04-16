@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image"
 import {
   TiStarFullOutline,
 } from "react-icons/ti"
@@ -11,8 +12,8 @@ const ProductCard = ({ title, price, description, category, productImage, rating
 
   return (
     <div className='mb-10 bg-slate-100 py-2 px-3 rounded-md hover:shadow-slate-400 shadow-md flex flex-col md:flex-row gap-10 justify-center md:justify-start'>
-      <img src={productImage} alt='CourseThubnail' className={`h-[200px] w-full md:w-[200px] rounded-xl object-contain flex items-center`} />
-      <div className='flex flex-col mt-2 justify-center gap-1'>
+      <Image src={productImage} alt={"productImage_image"} width={200} height={200} className="h-[200px] w-full md:w-[200px] rounded-xl object-contain flex items-center"/>
+      <div className='flex flex-col mt-2 justify-center gap-1 py-5'>
         <p className="font-bold capitalize text-2xl">{title}</p>
         <div className='flex gap-1'>
           <span className="flex gap-1">
