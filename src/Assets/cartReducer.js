@@ -1,9 +1,11 @@
 export const cartInitialState = {
-    cart: []
+    cart: [],
+    totalAmount : 0.00
 }
 
 export const cartReducer = (state, action) => {
     switch (action.type) {
+        //---> Add items 
         case taskName.ADD_ITEM:
             //check if Item is present
             var found = false;
@@ -18,22 +20,30 @@ export const cartReducer = (state, action) => {
 
             if (found) {
                 return {
-                    cart: [...IncreasedCountCart]
+                    cart: [...IncreasedCountCart],
+                    totalAmount: parseFloat((state.totalAmount + parseFloat(action.value.price)).toFixed(2))
                 };
             }
 
             return {
-                cart: [...state.cart, { index: state.cart.length + 1, item_data: action.value, count: 1 }]
+                cart: [...state.cart, { index: state.cart.length + 1, item_data: action.value, count: 1 }],
+                totalAmount: parseFloat((state.totalAmount + parseFloat(action.value.price)).toFixed(2))
             }
+        //---> Remove Item
         case taskName.REMOVE_ITEM:
             let updatedCart = state.cart.filter((curr) => curr != action.value)
             return {
-                cart: [...updatedCart]
+                cart: [...updatedCart],
+                totalAmount: parseFloat((state.totalAmount - parseFloat(action.value.price)).toFixed(2))
+
             }
+        //---> Empty Cart
         case taskName.EMPTY_CART:
             return {
-                cart: []
+                cart: [],
+                totalAmount : 0.00
             }
+        //---> Increase the Item count
         case taskName.INCREASE_COUNT:
             const IncrementedCountCart = state.cart.map((curr) => {
                 //if present update the cart item count;
@@ -43,8 +53,10 @@ export const cartReducer = (state, action) => {
                 return curr;
             })
             return {
-                cart: [...IncrementedCountCart]
+                cart: [...IncrementedCountCart],
+                totalAmount: parseFloat((state.totalAmount + parseFloat(action.value.price)).toFixed(2))
             };
+        //---> Decrease the Item count
         case taskName.DECREASE_COUNT:
             //check for the item present
             const currValue = state.cart.find((curr)=>curr.item_data.title == action.value.title)
@@ -67,7 +79,9 @@ export const cartReducer = (state, action) => {
             }
             
             return {
-                cart: [...DecrementedCountCart]
+                cart: [...DecrementedCountCart],
+                totalAmount: parseFloat((state.totalAmount - parseFloat(action.value.price)).toFixed(2))
+
             };
 
         default:

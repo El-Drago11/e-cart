@@ -9,7 +9,15 @@ const userCart =()=>{
     const{cartState} = cartContext;
 
     return(
-        <div className="grid grid-cols-1 gap-4 w-11/12 mx-auto mt-20">
+        <div className="w-11/12 mx-auto mt-20">
+            {
+                cartState.totalAmount !=0 && 
+                <div className="text-2xl font-bold bg-amber-500 px-4 w-fit py-1 rounded-md text-white">
+                    Total Price =  <sup>₹</sup>{cartState.totalAmount}
+                </div>
+            }
+            
+            <div className="grid grid-cols-1 gap-4 w-full mt-20">
             {
                 cartState?.cart?.length ? 
                 cartState?.cart?.map((curr,index)=>(
@@ -18,7 +26,9 @@ const userCart =()=>{
                 :
                 <div className=" text-4xl text-slate-400 text-center font-bold">No item in cart</div>
             }
+            </div>
         </div>
+        
     )
 }
 

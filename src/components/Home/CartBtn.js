@@ -13,7 +13,7 @@ const CartBtn = () => {
             <Link href='/cart'>
                 <button className=" bg-yellow-400 hover:bg-amber-500 text-black hover:text-white px-4 py-1 rounded-md w-fit cursor-pointer font-semibold"><TiShoppingCart size={25} /></button>
             </Link>
-            <div className="text-sm font-bold absolute top-[-5px] right-[-5px] bg-red-600 rounded-full px-1.5">{cartState?.cart.length}</div>
+            {cartState?.cart.length >0 && <div className="text-sm font-bold absolute top-[-5px] right-[-5px] bg-red-600 rounded-full px-1.5">{cartState?.cart.length}</div>}
         </div>
     )
 }
