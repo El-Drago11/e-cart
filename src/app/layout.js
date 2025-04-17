@@ -15,6 +15,7 @@ export default function RootLayout({children}) {
           <Navbar/>
           {children}
         </CartContextProvider>
+        <div id="modal-root" />
       </body>
     </html>
   );
