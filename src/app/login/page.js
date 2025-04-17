@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const Login = () => {
     const router  = useRouter();
     const getUserCredentials = async(e) => {
-        
+
         e.preventDefault();
         const formData = new FormData(e.target);
         const email = formData.get('email');
@@ -24,10 +24,7 @@ const Login = () => {
         <div className="flex flex-col items-center justify-center w-full">
             <div className="font-bold text-4xl text-center mb-4">Login</div>
 
-            <form
-                className="bg-slate-400 p-6 rounded-md flex flex-col gap-7 w-11/12 md:w-1/2 lg:w-[25%] py-6"
-                onSubmit={getUserCredentials}
-            >
+            <form className="bg-slate-400 p-6 rounded-md flex flex-col gap-7 w-11/12 md:w-1/2 lg:w-[25%] py-6"onSubmit={getUserCredentials}>
                 <div className="flex flex-col gap-1">
                     <div className="text-lg font-bold">Email</div>
                     <input
@@ -56,7 +53,7 @@ const Login = () => {
                 </button>
 
                 <p className="font-semibold">
-                    Don't have account? <Link href="/signup"><span className="font-bold cursor-pointer">Signup Now</span></Link>
+                    Don&apos;t have account? <Link href="/signup"><span className="font-bold cursor-pointer">Signup Now</span></Link>
                 </p>
             </form>
         </div>
