@@ -10,11 +10,11 @@ export const sortTheItems = (Type,sortedProducts) => {
             break;
 
         case sortType.RATING_DESC:
-            sortedProducts.sort((a, b) => a.rating?.rate - b.rating?.rate);
+            sortedProducts.sort((a, b) => b.rating?.rate - a.rating?.rate);
             break;
 
         case sortType.RATING_ASC:
-            sortedProducts.sort((a, b) => b.rating?.rate - a.rating?.rate);
+            sortedProducts.sort((a, b) => a.rating?.rate - b.rating?.rate);
             break;
 
         default:

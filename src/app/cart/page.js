@@ -3,12 +3,12 @@
 import ProductCard from "@/Common/ProductCard";
 import { useCartContextProvider } from "@/contextProvider/cartContextProvider";
 
-const UserCart = async()=>{
+const UserCart = ()=>{
     const cartContext = useCartContextProvider();
     const{cartState} = cartContext;
 
     return(
-        <div className="w-11/12 mx-auto mt-32">
+        <div className="mx-auto">
             {
                 cartState.totalAmount !=0 && 
                 <div className="text-2xl font-semibold bg-amber-500 px-4 w-fit py-1 rounded-md text-black">
@@ -16,7 +16,7 @@ const UserCart = async()=>{
                 </div>
             }
             
-            <div className="grid grid-cols-1 gap-4 w-full mt-20">
+            <div className="grid grid-cols-1 gap-4 w-full mt-10">
             {
                 cartState?.cart?.length ? 
                 cartState?.cart?.map((curr,index)=>(

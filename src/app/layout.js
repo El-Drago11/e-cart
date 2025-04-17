@@ -13,7 +13,9 @@ export default function RootLayout({children}) {
       <body>
         <CartContextProvider>
           <Navbar/>
-          {children}
+          <div className="w-11/12 mx-auto mt-32">
+            {children}
+          </div>
         </CartContextProvider>
         <div id="modal-root" />
       </body>

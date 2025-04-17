@@ -8,7 +8,7 @@ const ProductLayout = async({searchParams }) => {
   sortTheItems(sort,resp)
 
   return (
-    <div className='grid grid-cols-1 gap-4 w-11/12 mx-auto mt-32'>
+    <div className='grid grid-cols-1 gap-'>
       {
         resp.map((curr)=>(
           <ProductCard title={curr?.title} price={curr?.price} description={curr.description} category={curr?.category} productImage={curr?.image} rating={curr?.rating?.rate} key={curr?.id} productId={curr?.id}/>
