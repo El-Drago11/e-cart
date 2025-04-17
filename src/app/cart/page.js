@@ -9,10 +9,10 @@ const userCart =()=>{
     const{cartState} = cartContext;
 
     return(
-        <div className="w-11/12 mx-auto mt-20">
+        <div className="w-11/12 mx-auto mt-32">
             {
                 cartState.totalAmount !=0 && 
-                <div className="text-2xl font-bold bg-amber-500 px-4 w-fit py-1 rounded-md text-white">
+                <div className="text-2xl font-semibold bg-amber-500 px-4 w-fit py-1 rounded-md text-black">
                     Total Price =  <sup>₹</sup>{cartState.totalAmount}
                 </div>
             }
