@@ -1,6 +1,7 @@
 import Link from "next/link"
 import CartBtn from "./CartBtn"
 import SortDropdown from "./SortItems"
+import { Suspense } from "react"
 
 const Navbar = async () => {
   return (
@@ -12,11 +13,12 @@ const Navbar = async () => {
         <div className="flex gap-2.5">
           <CartBtn />
           <button className=" bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-md w-fit cursor-pointer font-bold">Login </button>
-          <SortDropdown/>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SortDropdown/>
+          </Suspense>
         </div>
       </div>
     </div>
-
   )
 }
 

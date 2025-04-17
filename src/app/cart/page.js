@@ -3,7 +3,7 @@
 import ProductCard from "@/Common/ProductCard";
 import { useCartContextProvider } from "@/contextProvider/cartContextProvider";
 
-const userCart =()=>{
+const UserCart =()=>{
 
     const cartContext = useCartContextProvider();
     const{cartState} = cartContext;
@@ -32,4 +32,4 @@ const userCart =()=>{
     )
 }
 
-export default userCart;
+export default UserCart;

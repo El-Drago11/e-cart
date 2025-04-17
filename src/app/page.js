@@ -4,8 +4,8 @@ const { getAllProduct } = require("@/apis/landingPage");
 
 const ProductLayout = async({searchParams }) => {
   const resp = await getAllProduct();
-  const sortType = searchParams?.sort || "default";
-  sortTheItems(sortType,resp)
+  const {sort="default"} = await searchParams;
+  sortTheItems(sort,resp)
 
   return (
     <div className='grid grid-cols-1 gap-4 w-11/12 mx-auto mt-32'>
