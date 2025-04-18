@@ -23,4 +23,4 @@ https://e-cart-xi-seven.vercel.app/
 4) Login and logout Validation
 5) Checkout cart page
 6) Persistant data storage using local storage 
-7) Deployed on firebase
+7) Deployed on vercel
