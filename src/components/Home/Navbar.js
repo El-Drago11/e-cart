@@ -2,6 +2,7 @@ import Link from "next/link"
 import CartBtn from "./CartBtn"
 import SortDropdown from "./SortItems"
 import { Suspense } from "react"
+import SiderBar from "./SiderBar"
 
 const Navbar = () => {
   return (
@@ -10,15 +11,7 @@ const Navbar = () => {
         <Link href='/'>
           <div className=" text-2xl font-bold">E-cart</div>
         </Link>
-        <div className="flex gap-2.5">
-          <CartBtn />
-          <Link href={'/login'}>
-            <button className=" bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-md w-fit cursor-pointer font-bold">Login </button>
-          </Link>
-          <Suspense fallback={<div>Loading...</div>}>
-            <SortDropdown/>
-          </Suspense>
-        </div>
+        <SiderBar/>
       </div>
     </div>
   )

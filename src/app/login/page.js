@@ -1,30 +1,28 @@
 'use client'
 
-import { LoginUser } from "@/apis/LoginApi";
+import { useLoginContextProvider } from "@/contextProvider/LoginContextProvider";
 import Link from "next/link"
-import { useRouter } from "next/navigation";
 
 const Login = () => {
-    const router  = useRouter();
+
+    const{LoginDetails} = useLoginContextProvider();
+
     const getUserCredentials = async(e) => {
 
         e.preventDefault();
         const formData = new FormData(e.target);
         const email = formData.get('email');
         const password = formData.get('password');
+        LoginDetails(email,password);
 
-        const Response = await LoginUser(email,password)
-        if(Response){
-            alert('Login successfully')
-            router.push('/')
-        }
+        return;
     }
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
             <div className="font-bold text-4xl text-center mb-4">Login</div>
 
-            <form className="bg-slate-400 p-6 rounded-md flex flex-col gap-7 w-11/12 md:w-1/2 lg:w-[25%] py-6"onSubmit={getUserCredentials}>
+            <form className="bg-slate-400 p-6 rounded-md flex flex-col gap-7 w-11/12 md:w-1/2 lg:w-[25%] py-6" onSubmit={getUserCredentials}>
                 <div className="flex flex-col gap-1">
                     <div className="text-lg font-bold">Email</div>
                     <input
