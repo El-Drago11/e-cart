@@ -5,9 +5,10 @@ import CartBtn from "./CartBtn"
 import { Suspense} from "react"
 import SortDropdown from "./SortItems"
 import { useLoginContextProvider } from "@/contextProvider/LoginContextProvider"
+import { usePathname } from "next/navigation"
 
 const SiderBar = () => {
-
+    const pathname = usePathname()
     const {isLogin,LogoutUser} = useLoginContextProvider();
 
     return (
@@ -21,10 +22,12 @@ const SiderBar = () => {
                     <button className=" bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-md w-fit cursor-pointer font-bold">Login </button>
                 </Link>
             }
+            {
+                pathname==='/' && <Suspense fallback={<div>Loading...</div>}>
+                    <SortDropdown />
+                </Suspense> 
+            }
             
-            <Suspense fallback={<div>Loading...</div>}>
-                <SortDropdown />
-            </Suspense>
         </div>
     )
 }
