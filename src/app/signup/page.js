@@ -16,7 +16,7 @@ const Login = () => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <div className="font-bold text-4xl text-center mb-4">Login</div>
+            <div className="font-bold text-4xl text-center mb-4">Signup</div>
 
             <form
                 className="bg-slate-400 p-6 rounded-md flex flex-col gap-7 w-11/12 md:w-1/2 lg:w-[25%] py-6"
