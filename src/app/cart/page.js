@@ -2,10 +2,26 @@
 
 import ProductCard from "@/Common/ProductCard";
 import { useCartContextProvider } from "@/contextProvider/cartContextProvider";
+import { useLoginContextProvider } from "@/contextProvider/LoginContextProvider";
+import { useRouter } from "next/navigation";
 
 const UserCart = ()=>{
+
+    const {isLogin} = useLoginContextProvider();
+    const router = useRouter();
+
     const cartContext = useCartContextProvider();
     const{cartState} = cartContext;
+
+    const proccedCheckout = ()=>{
+        if(isLogin){
+            router.push('cart/checkout')
+        }else{
+            router.push('/login')
+        }
+        return;
+    }
+
 
     return(
         <div className="mx-auto">
@@ -15,7 +31,7 @@ const UserCart = ()=>{
                     <div className="text-2xl font-semibold bg-amber-500 px-4 w-fit py-1 rounded-md text-black">
                         Total Price =  <sup>₹</sup>{cartState.totalAmount}
                     </div>
-                    <button className="text-2xl font-semibold bg-green-500 px-4 w-fit py-1 rounded-md text-white cursor-pointer">Checkout</button>
+                    <button className="text-2xl font-semibold bg-green-500 px-4 w-fit py-1 rounded-md text-white cursor-pointer" onClick={()=>proccedCheckout()}>Checkout</button>
                 </div>
             }
             
