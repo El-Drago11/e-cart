@@ -11,8 +11,11 @@ const UserCart = ()=>{
         <div className="mx-auto">
             {
                 cartState.totalAmount !=0 && 
-                <div className="text-2xl font-semibold bg-amber-500 px-4 w-fit py-1 rounded-md text-black">
-                    Total Price =  <sup>₹</sup>{cartState.totalAmount}
+                <div className=" flex justify-between flex-wrap-reverse gap-5">
+                    <div className="text-2xl font-semibold bg-amber-500 px-4 w-fit py-1 rounded-md text-black">
+                        Total Price =  <sup>₹</sup>{cartState.totalAmount}
+                    </div>
+                    <button className="text-2xl font-semibold bg-green-500 px-4 w-fit py-1 rounded-md text-white cursor-pointer">Checkout</button>
                 </div>
             }
             
