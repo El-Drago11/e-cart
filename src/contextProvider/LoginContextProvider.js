@@ -3,7 +3,7 @@
 import { LoginUser } from "@/apis/LoginApi";
 import { useRouter } from "next/navigation";
 
-const { createContext, useContext, useState } = require("react")
+const { createContext, useContext, useState, useEffect } = require("react")
 
 const LoginContext = createContext();
 
@@ -26,6 +26,13 @@ export const LoginContextProvider = ({children})=>{
         setIsLogin(false)
         router.push('/');
     }
+
+    useEffect(()=>{
+        const userDetail = JSON.parse(localStorage.getItem('userProfile'))
+        if(userDetail){
+            setIsLogin(true);
+        }
+    },[])
 
     return(
         <LoginContext.Provider value={{LoginDetails,LogoutUser,isLogin}}>
