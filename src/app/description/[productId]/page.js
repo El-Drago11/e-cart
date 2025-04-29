@@ -25,7 +25,7 @@ const PhotoModal = async({ params })=> {
                 <p className="capitalize"><span className="font-bold"><sup className=" font-light">Brand</sup> 
                   </span> {productDetails?.category}
                 </p>
-                <p className='text-richblack-5 text-2xl font-bold'><sup>₹</sup>{productDetails?.price}<span className="font-light text-sm ml-2">MRP</span></p> 
+                <p className='text-2xl font-bold'><sup>₹</sup>{productDetails?.price}<span className="font-light text-sm ml-2">MRP</span></p> 
                 <p className="font-light capitalize text-lg">{productDetails?.description}</p>
               </div>
             </div>

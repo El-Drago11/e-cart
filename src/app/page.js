@@ -1,3 +1,5 @@
+export const revalidate = 60; // Tells Next.js to skip caching
+
 import { sortTheItems } from "@/Assets/sortItems";
 import ProductCard from "@/Common/ProductCard";
 const { getAllProduct } = require("@/apis/landingPage");

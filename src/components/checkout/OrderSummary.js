@@ -10,7 +10,7 @@ const OrderSummary = () => {
     return (
         <div className="w-full md:w-1/2 lg:w-1/3 flex justify-center flex-col items-center border-2 border-slate-200 rounded-lg p-2 mb-10">
             <div className=" text-2xl font-bold border-b-2 border-slate-200 w-full py-2">Order Summary</div>
-            <ul className="w-full px-4 flex flex-col gap-4 text-slate-700 my-10">
+            <ul className="w-full px-4 flex flex-col gap-4 text-[oklch(var(--text-muted))] my-10">
                 <li className="flex justify-between">
                     <div>Product Cost</div>
                     <div><sup>₹</sup>{cartState?.totalAmount}</div>

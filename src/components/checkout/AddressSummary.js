@@ -13,7 +13,7 @@ const AddressSummary = () => {
     },[])
 
   return (
-    <div className=" self-start font-semibold text-slate-700 border-2 border-slate-400 w-full md:w-1/2 lg:w-1/4 py-2 px-4 rounded-md">
+    <div className=" self-start font-semibold text-[oklch(var(--text-muted))] border-2 border-slate-400 w-full md:w-1/2 lg:w-1/4 py-2 px-4 rounded-md">
         <div className="text-lg font-bold mb-2">Address Summary</div>
         <div className="flex gap-2 capitalize border-b-2 border-slate-300 mb-2 pb-1">
             <div>City : </div>

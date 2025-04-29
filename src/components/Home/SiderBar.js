@@ -6,13 +6,20 @@ import { Suspense} from "react"
 import SortDropdown from "./SortItems"
 import { useLoginContextProvider } from "@/contextProvider/LoginContextProvider"
 import { usePathname } from "next/navigation"
+import {useThemeContextProvider } from "@/contextProvider/ThemeContextProvider"
 
 const SiderBar = () => {
+    const themeProvider = useThemeContextProvider();
+    const {getTheme,setTheme} = themeProvider
     const pathname = usePathname()
     const {isLogin,LogoutUser} = useLoginContextProvider();
 
+    const changeTheme = ()=>{
+        setTheme((prev)=>prev=='dark'?'light':'dark')
+    }
+
     return (
-        <div className="flex gap-2.5">
+        <div className="flex gap-2.5 flex-wrap justify-between">
             <CartBtn />
             {
                 isLogin ? 
@@ -27,6 +34,7 @@ const SiderBar = () => {
                     <SortDropdown />
                 </Suspense> 
             }
+            <button className="bg-white text-black rounded-full px-2 py-1 cursor-pointer hover:bg-slate-100 font-semibold" onClick={()=>changeTheme()}>{getTheme=='dark'?'Light-Mode' : 'Dark-Mode'}</button>
             
         </div>
     )

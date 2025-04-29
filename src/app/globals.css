@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+
+.light {
+  --background: 245, 245, 245;
+  --text: 0, 0, 0;
+  --card-background:96.8% .007 247.896;
+  --card-shadow:70.4% .04 256.788;
+  --text-muted:37.2% .044 257.287;
+  background: rgba(var(--background));
+  color: rgba(var(--text));
+}
+
+.dark {
+  --background: 0, 0, 0;
+  --text: 228, 228, 228;
+  --card-background:0.22 0 0;
+  --card-shadow:37.2% .044 257.287;
+  --text-muted:0.89 0.01 257.05;
+  background: rgba(var(--background));
+  color: rgb(var(--text));
+}
+
+
 .close-button {
   position: absolute;
   top: 10px;
